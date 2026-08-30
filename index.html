@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primary Newsletter — The Good Shepherd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --linen-mint:#F7FAF6;
+    --soft-sage:#DCE7DD;
+    --sage-line:#C9DACB;
+    --teal-mid:#5BAAA0;
+    --deep-teal:#2E6058;
+    --sunlit-gold:#F5C84A;
+    --coral:#E87B5A;
+    --coral-wash:#FBEAE3;
+    --blush-pink:#E8A0B8;
+    --blush-wash:#F9EDF1;
+    --garden-pink:#CF6FA0;
+    --garden-pink-deep:#B45C88;
+    --deep-earth:#3D3530;
+    --paper:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;min-height:100%;}
+  body{
+    overflow-x:hidden;
+    background:var(--linen-mint);
+    color:var(--deep-earth);
+    font-family:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ================= page + row grid ================= */
+  .page{max-width:1080px;margin:0 auto;padding:38px 28px 44px;}
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:34px 44px;
+    align-items:start;
+  }
+  .full{grid-column:1 / -1;}
+  .rowrule{
+    grid-column:1 / -1;
+    border:0;height:1px;background:var(--sage-line);margin:0;
+  }
+
+  /* ================= shared block frame ================= */
+  .blk-title{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+    font-weight:300;
+    font-size:clamp(27px,3.2vw,36px);
+    line-height:1.1;
+    color:var(--deep-teal);
+    margin:0 0 12px;
+    text-wrap:balance;
+  }
+  .blk-tick{width:64px;height:3px;border-radius:2px;margin:0 0 22px;}
+
+  /* ================= 1 · welcome ================= */
+  .blk-welcome .blk-tick{background:var(--sunlit-gold);}
+  .w-panel{background:var(--soft-sage);border-radius:18px;padding:28px 30px 24px;}
+  .w-quote{margin:0;padding:2px 0 2px 18px;border-left:3px solid var(--sunlit-gold);}
+  .w-quote p{
+    margin:0;
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:300;font-style:italic;
+    font-size:clamp(19px,2.3vw,24px);line-height:1.35;
+    color:var(--garden-pink);
+  }
+  .w-ref{
+    display:block;margin-top:11px;
+    font-size:11px;font-weight:400;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--coral);
+  }
+  .w-body{margin:20px 0 0;font-size:15px;line-height:1.7;color:var(--deep-earth);}
+  .w-sign{
+    margin:22px 0 0;padding-top:18px;
+    border-top:1px solid var(--linen-mint);
+    text-align:right;
+  }
+  .w-sign .lead{
+    display:block;
+    font-size:10px;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal-mid);margin-bottom:5px;
+  }
+  .w-sign .names{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-style:italic;font-size:18px;line-height:1.45;color:var(--deep-teal);
+  }
+
+  /* ================= 2 · birthdays ================= */
+  .blk-birthdays .blk-tick{background:var(--blush-pink);}
+  .b-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:12px;}
+  .b-card{
+    display:flex;align-items:center;gap:13px;
+    background:var(--paper);border:1px solid var(--sage-line);
+    border-radius:16px;padding:13px 15px;
+  }
+  .b-medal{
+    flex:0 0 auto;width:50px;height:50px;border-radius:50%;
+    background:var(--blush-wash);border:2px solid var(--blush-pink);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  .b-medal .d{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:21px;line-height:1;color:var(--deep-teal);
+    font-variant-numeric:tabular-nums;
+  }
+  .b-medal .m{
+    font-size:9px;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--garden-pink);margin-top:2px;
+  }
+  .b-name{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:19px;line-height:1.2;color:var(--deep-teal);margin:0;
+  }
+  .b-age{
+    display:inline-block;margin:6px 0 0;padding:3px 9px;border-radius:999px;
+    background:var(--coral-wash);
+    font-size:10px;font-weight:500;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--coral);
+  }
+
+  /* ================= 3 · songs we are learning ================= */
+  .blk-singing .blk-tick{background:var(--garden-pink);}
+  .s-play{
+    display:inline-flex;align-items:center;gap:11px;
+    background:var(--garden-pink);color:var(--linen-mint);
+    text-decoration:none;border-radius:999px;
+    padding:12px 24px 12px 20px;
+    font-size:11px;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;
+    transition:background .18s ease;
+  }
+  .s-play:hover{background:var(--garden-pink-deep);}
+  .s-play:focus-visible{outline:2px solid var(--deep-teal);outline-offset:3px;}
+  .s-play svg{flex:0 0 auto;display:block;}
+
+  /* ================= 4 · upcoming dates ================= */
+  .blk-dates .blk-tick{background:var(--coral);}
+  .u-list{display:flex;flex-direction:column;gap:10px;}
+  .u-row{
+    display:flex;align-items:center;gap:16px;
+    background:var(--paper);
+    border:1px solid var(--sage-line);
+    border-left:4px solid var(--coral);
+    border-radius:12px;padding:14px 18px;
+  }
+  .u-date{flex:0 0 auto;width:50px;text-align:center;}
+  .u-date .d{
+    display:block;
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:26px;line-height:1;color:var(--deep-teal);
+    font-variant-numeric:tabular-nums;
+  }
+  .u-date .m{
+    display:block;
+    font-size:10px;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal-mid);margin-top:4px;
+  }
+  .u-sep{flex:0 0 auto;width:1px;align-self:stretch;background:var(--sage-line);}
+  .u-event{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:20px;line-height:1.2;color:var(--deep-teal);margin:0;
+  }
+  .u-when{
+    margin:5px 0 0;
+    font-size:10px;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal-mid);
+  }
+  .u-note{
+    margin:5px 0 0;
+    font-size:11px;font-weight:400;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--coral);
+  }
+
+  /* ================= 5 · come, follow me ================= */
+  .blk-cfm .blk-tick{background:var(--teal-mid);}
+  .c-list{position:relative;}
+  .c-list::before{
+    content:"";position:absolute;
+    left:62px;top:14px;bottom:14px;width:2px;background:var(--sage-line);
+  }
+  .c-row{display:grid;grid-template-columns:52px 22px 1fr;align-items:start;padding:15px 0;}
+  .c-when{grid-column:1;text-align:right;padding-top:1px;padding-right:12px;}
+  .c-when .d{
+    display:block;
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:23px;line-height:1;color:var(--deep-teal);
+    font-variant-numeric:tabular-nums;
+  }
+  .c-when .m{
+    display:block;
+    font-size:10px;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal-mid);margin-top:3px;
+  }
+  .c-node{
+    grid-column:2;justify-self:center;margin-top:6px;
+    width:11px;height:11px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--teal-mid);
+    position:relative;z-index:1;
+  }
+  .c-body{grid-column:3;padding-left:8px;}
+  .c-week{
+    margin:0;
+    font-size:10px;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal-mid);
+  }
+  .c-lesson{
+    margin:6px 0 0;
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:20px;line-height:1.25;color:var(--deep-teal);text-wrap:balance;
+  }
+  .c-ref{
+    margin:5px 0 0;
+    font-size:11px;font-weight:400;letter-spacing:.10em;
+    text-transform:uppercase;color:var(--coral);
+  }
+
+
+  /* ================= footer ================= */
+  .ftr{
+    margin-top:38px;
+    padding:30px 24px 0;
+    text-align:center;
+  }
+  .ftr-rule{
+    height:1px;
+    background:var(--sage-line);
+    margin:0 0 24px;
+  }
+  .f-label{
+    margin:0 0 8px;
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--teal-mid);
+  }
+  .f-link{
+    display:inline-block;
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:400;
+    font-size:23px;
+    line-height:1.25;
+    color:var(--deep-teal);
+    text-decoration:none;
+    border-bottom:1px solid var(--sage-line);
+    padding-bottom:2px;
+    transition:border-color .18s ease;
+  }
+  .f-link:hover,
+  .f-link:focus-visible{border-bottom-color:var(--deep-teal);}
+  .f-link:focus-visible{
+    outline:2px solid var(--deep-teal);
+    outline-offset:4px;
+    border-radius:2px;
+  }
+  .f-legal{
+    margin:26px auto 0;
+    max-width:56ch;
+    font-size:11px;
+    font-weight:400;
+    line-height:1.65;
+    letter-spacing:.02em;
+    color:var(--teal-mid);
+  }
+  .f-legal .nb{white-space:nowrap;}
+
+  /* ================= responsive ================= */
+  @media (max-width:820px){
+    .grid{grid-template-columns:1fr;gap:30px;}
+    .full{grid-column:auto;}
+  }
+  @media (max-width:480px){
+    .page{padding:28px 18px 32px;}
+    .w-panel{padding:24px 20px 22px;}
+    .w-sign{text-align:left;}
+    .c-list::before{left:50px;}
+    .c-row{grid-template-columns:40px 22px 1fr;}
+    .u-row{gap:13px;padding:13px 15px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="grid">
+
+    <!-- ===== 1 · welcome (left) ===== -->
+    <section class="blk-welcome">
+      <h2 class="blk-title">Welcome to Primary</h2>
+      <div class="blk-tick"></div>
+      <div class="w-panel">
+        <blockquote class="w-quote">
+          <p>“And he took their little children, one by one, and blessed them, and prayed unto the Father for them.”</p>
+          <span class="w-ref">3 Nephi 17:21</span>
+        </blockquote>
+        <p class="w-body">
+          Like the Savior, we are striving to minister to your children one by one as we pray
+          for them and create experiences that will build their faith and strengthen their
+          testimonies. Thank you for sharing your wonderful children with us in Primary!
+        </p>
+        <p class="w-sign">
+          <span class="lead">Love,</span>
+          <span class="names">Sister Satterfield, Sister Jussel, Sister Moss, and Sister Smidt</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 2 · birthdays (right) ===== -->
+    <section class="blk-birthdays">
+      <h2 class="blk-title">September Birthdays</h2>
+      <div class="blk-tick"></div>
+      <div class="b-grid">
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">5</span><span class="m">Sep</span></div>
+          <div>
+            <p class="b-name">Myles Satterfield</p>
+            <p class="b-age">Turning 7</p>
+          </div>
+        </div>
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">10</span><span class="m">Sep</span></div>
+          <div>
+            <p class="b-name">Brooklyn Jensen</p>
+            <p class="b-age">Turning 10</p>
+          </div>
+        </div>
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">13</span><span class="m">Sep</span></div>
+          <div>
+            <p class="b-name">Payton Jussel</p>
+            <p class="b-age">Turning 10</p>
+          </div>
+        </div>
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">18</span><span class="m">Sep</span></div>
+          <div>
+            <p class="b-name">Caden Carnahan</p>
+            <p class="b-age">Turning 8</p>
+          </div>
+        </div>
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">19</span><span class="m">Sep</span></div>
+          <div>
+            <p class="b-name">Brooklyn Carnahan</p>
+            <p class="b-age">Turning 9</p>
+          </div>
+        </div>
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">28</span><span class="m">Sep</span></div>
+          <div>
+            <p class="b-name">Hank Walters</p>
+            <p class="b-age">Turning 8</p>
+          </div>
+        </div>
+
+        <!-- repeat .b-card per birthday, sorted by day -->
+
+      </div>
+    </section>
+
+    <hr class="rowrule">
+
+    <!-- ===== 3 · songs we are learning (left) ===== -->
+    <section class="blk-singing">
+      <h2 class="blk-title">Songs We Are Learning</h2>
+      <div class="blk-tick"></div>
+      <a class="s-play"
+         href="https://www.youtube.com/playlist?list=PLaYp69Rghk-PMCj8zfqe9njJGMrykEDKe"
+         target="_blank" rel="noopener">
+        <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true" focusable="false">
+          <path d="M0 0l11 6-11 6z" fill="currentColor"></path>
+        </svg>
+        Listen on YouTube
+      </a>
+    </section>
+
+    <!-- ===== 4 · upcoming dates (right) ===== -->
+    <section class="blk-dates">
+      <h2 class="blk-title">Upcoming Dates</h2>
+      <div class="blk-tick"></div>
+      <div class="u-list">
+
+        <div class="u-row">
+          <div class="u-date"><span class="d">8</span><span class="m">Nov</span></div>
+          <div class="u-sep"></div>
+          <div>
+            <p class="u-event">Primary Program</p>
+            <p class="u-when">Sunday · Sacrament Meeting</p>
+          </div>
+        </div>
+
+        <!-- repeat .u-row per date, sorted earliest first.
+             Optional third line: <p class="u-note">Bring a sack lunch</p> -->
+
+      </div>
+    </section>
+
+    <hr class="rowrule">
+
+    <!-- ===== 5 · come, follow me (full width) ===== -->
+    <section class="blk-cfm full">
+      <h2 class="blk-title">September Come, Follow Me</h2>
+      <div class="blk-tick"></div>
+      <div class="c-list">
+
+        <div class="c-row">
+          <div class="c-when"><span class="d">6</span><span class="m">Sep</span></div>
+          <div class="c-node"></div>
+          <div class="c-body">
+            <p class="c-week">August 31 – September 6</p>
+            <p class="c-lesson">“Let Every Thing That Hath Breath Praise the Lord”</p>
+            <p class="c-ref">Psalms 102–3; 110; 116–19; 127–28; 135–39; 146–50</p>
+          </div>
+        </div>
+
+        <div class="c-row">
+          <div class="c-when"><span class="d">13</span><span class="m">Sep</span></div>
+          <div class="c-node"></div>
+          <div class="c-body">
+            <p class="c-week">September 7 – 13</p>
+            <p class="c-lesson">“He Shall Direct Thy Paths”</p>
+            <p class="c-ref">Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12</p>
+          </div>
+        </div>
+
+        <div class="c-row">
+          <div class="c-when"><span class="d">20</span><span class="m">Sep</span></div>
+          <div class="c-node"></div>
+          <div class="c-body">
+            <p class="c-week">September 14 – 20</p>
+            <p class="c-lesson">“God Is My Salvation”</p>
+            <p class="c-ref">Isaiah 1–12</p>
+          </div>
+        </div>
+
+        <div class="c-row">
+          <div class="c-when"><span class="d">27</span><span class="m">Sep</span></div>
+          <div class="c-node"></div>
+          <div class="c-body">
+            <p class="c-week">September 21 – 27</p>
+            <p class="c-lesson">“A Marvellous Work and a Wonder”</p>
+            <p class="c-ref">Isaiah 13–14; 22; 24–30; 35</p>
+          </div>
+        </div>
+
+        <!-- repeat .c-row per Sunday, in date order -->
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== footer ===== -->
+  <footer class="ftr">
+    <div class="ftr-rule"></div>
+    <p class="f-label">More from the ward</p>
+    <a class="f-link" href="https://sites.google.com/view/legacy-ward/home" target="_blank" rel="noopener">Ward Bulletin</a>
+    <p class="f-legal">This is not an official website of The Church of Jesus Christ of <span class="nb">Latter-day Saints</span> &copy; 2026. All Rights Reserved.</p>
+  </footer>
+
+</div>
+</body>
+</html>
