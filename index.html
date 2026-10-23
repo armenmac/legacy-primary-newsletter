@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Legacy Ward Primary Newsletter</title>
-<meta name="description" content="Birthdays, Come Follow Me, songs, talks and prayers, activities, and upcoming dates for the children of Legacy Ward Primary.">
+<meta name="description" content="Birthdays, Come Follow Me, songs, activities, and upcoming dates for the children of Legacy Ward Primary.">
 
 <!-- ===== social preview (Open Graph + Twitter) =====
      og:image must be an absolute URL — relative paths are ignored by every
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Legacy Ward Primary">
 <meta property="og:title" content="Legacy Ward Primary Newsletter">
-<meta property="og:description" content="Birthdays, Come Follow Me, songs, talks and prayers, activities, and upcoming dates for the children of Legacy Ward Primary.">
+<meta property="og:description" content="Birthdays, Come Follow Me, songs, activities, and upcoming dates for the children of Legacy Ward Primary.">
 <meta property="og:url" content="https://sites.google.com/view/legacyprimary">
 <meta property="og:image" content="https://raw.githubusercontent.com/armenmac/legacy-primary-newsletter/ac85e1f7a27d9a830f1b43f1ff334c98a8461e03/jesus-children.jpg">
 <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/armenmac/legacy-primary-newsletter/ac85e1f7a27d9a830f1b43f1ff334c98a8461e03/jesus-children.jpg">
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Legacy Ward Primary Newsletter">
-<meta name="twitter:description" content="Birthdays, Come Follow Me, songs, talks and prayers, activities, and upcoming dates for the children of Legacy Ward Primary.">
+<meta name="twitter:description" content="Birthdays, Come Follow Me, songs, activities, and upcoming dates for the children of Legacy Ward Primary.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/armenmac/legacy-primary-newsletter/ac85e1f7a27d9a830f1b43f1ff334c98a8461e03/jesus-children.jpg">
 <meta name="twitter:image:alt" content="Watercolor illustration of Jesus walking through a flowering garden with children">
 
@@ -87,6 +87,7 @@
     align-items:start;
   }
   .full{grid-column:1 / -1;}
+  .rest{margin-top:34px;}
   .rowrule{
     grid-column:1 / -1;
     border:0;height:1px;background:var(--sage-line);margin:0;
@@ -183,9 +184,13 @@
   .s-play:hover{background:var(--garden-pink-deep);}
   .s-play:focus-visible{outline:2px solid var(--deep-teal);outline-offset:3px;}
   .s-play svg{flex:0 0 auto;display:block;}
+  .s-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px 28px;}
+  .s-bar .blk-tick{margin-bottom:0;}
 
   /* ================= 4 · upcoming dates ================= */
   .blk-dates .blk-tick{background:var(--coral);}
+  .u-wrap{display:grid;grid-template-columns:1fr 1.45fr;gap:20px 28px;align-items:stretch;}
+  .u-wrap .u-call{margin:0;display:flex;flex-direction:column;justify-content:center;}
   .u-list{display:flex;flex-direction:column;gap:10px;}
   .u-row{
     display:flex;align-items:center;gap:16px;
@@ -221,6 +226,14 @@
     font-size:11px;font-weight:400;letter-spacing:.12em;
     text-transform:uppercase;color:var(--coral);
   }
+
+  .u-call{background:var(--coral-wash);border-radius:12px;padding:16px 20px 18px;margin:0 0 18px;}
+  .u-call-title{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:22px;line-height:1.2;color:var(--deep-teal);margin:0;
+  }
+  .u-call-body{margin:7px 0 0;font-size:14px;line-height:1.65;color:var(--deep-earth);}
+  .u-desc{margin:7px 0 0;font-size:13px;line-height:1.55;color:var(--deep-earth);}
 
   /* ================= 5 · come, follow me ================= */
   .blk-cfm .blk-tick{background:var(--teal-mid);}
@@ -263,44 +276,6 @@
     margin:5px 0 0;
     font-size:11px;font-weight:400;letter-spacing:.10em;
     text-transform:uppercase;color:var(--coral);
-  }
-
-  /* ================= 6 · talks & prayers ================= */
-  /* Form: roster cards — a labelled duty list per Sunday, no rail, no bands.
-     Accent: Deep Teal. It is the only brand color not already spent as a block
-     accent, and it reads as the "assignment" voice: same Sundays as Come, Follow
-     Me, but people rather than lessons. */
-  .blk-talks .blk-tick{background:var(--deep-teal);}
-  .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:14px;}
-  .t-card{
-    background:var(--paper);
-    border:1px solid var(--sage-line);
-    border-top:4px solid var(--deep-teal);
-    border-radius:14px;
-    padding:16px 18px 18px;
-  }
-  .t-date{
-    margin:0 0 12px;padding-bottom:10px;
-    border-bottom:1px solid var(--sage-line);
-    font-family:'Cormorant Garamond',Georgia,serif;
-    font-size:22px;line-height:1;color:var(--deep-teal);
-    font-variant-numeric:tabular-nums;
-  }
-  .t-role{margin:0;padding:7px 0;}
-  .t-role + .t-role{border-top:1px dotted var(--sage-line);}
-  .t-role .r{
-    display:block;
-    font-size:9px;font-weight:500;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--teal-mid);
-  }
-  .t-role .n{
-    display:block;margin-top:3px;
-    font-family:'Cormorant Garamond',Georgia,serif;
-    font-size:18px;line-height:1.25;color:var(--deep-teal);
-  }
-  .t-role .n.none{
-    font-family:'Jost',sans-serif;font-size:11px;font-weight:500;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--coral);
   }
 
   /* ================= 7 · valiant activities ================= */
@@ -406,8 +381,10 @@
 
   /* ================= responsive ================= */
   @media (max-width:820px){
+    .u-wrap{grid-template-columns:1fr;}
     .grid{grid-template-columns:1fr;gap:30px;}
     .full{grid-column:auto;}
+    .rest{margin-top:30px;}
   }
   @media (max-width:560px){
     /* Valiant: the sideways ledger folds into stacked, labelled entries. */
@@ -424,6 +401,7 @@
     .c-list::before{left:50px;}
     .c-row{grid-template-columns:40px 22px 1fr;}
     .u-row{gap:13px;padding:13px 15px;}
+    .u-call{padding:14px 16px 16px;}
     .v-panel{padding:6px 18px 16px;}
   }
 </style>
@@ -436,7 +414,7 @@
          alt="Watercolor illustration of Jesus walking through a flowering garden with children">
   </div>
 
-  <div class="grid">
+  <div class="grid top">
 
     <!-- ===== 1 · welcome (left) ===== -->
     <section class="blk-welcome">
@@ -461,54 +439,46 @@
 
     <!-- ===== 2 · birthdays (right) ===== -->
     <section class="blk-birthdays">
-      <h2 class="blk-title">September Birthdays</h2>
+      <h2 class="blk-title">October Birthdays</h2>
       <div class="blk-tick"></div>
       <div class="b-grid">
 
         <div class="b-card">
-          <div class="b-medal"><span class="d">5</span><span class="m">Sep</span></div>
+          <div class="b-medal"><span class="d">5</span><span class="m">Oct</span></div>
           <div>
-            <p class="b-name">Myles Satterfield</p>
-            <p class="b-age">Turning 8</p>
-          </div>
-        </div>
-
-        <div class="b-card">
-          <div class="b-medal"><span class="d">10</span><span class="m">Sep</span></div>
-          <div>
-            <p class="b-name">Brooklyn Jensen</p>
-            <p class="b-age">Turning 11</p>
-          </div>
-        </div>
-
-        <div class="b-card">
-          <div class="b-medal"><span class="d">13</span><span class="m">Sep</span></div>
-          <div>
-            <p class="b-name">Payton Jussel</p>
-            <p class="b-age">Turning 11</p>
-          </div>
-        </div>
-
-        <div class="b-card">
-          <div class="b-medal"><span class="d">18</span><span class="m">Sep</span></div>
-          <div>
-            <p class="b-name">Caden Carnahan</p>
-            <p class="b-age">Turning 9</p>
-          </div>
-        </div>
-
-        <div class="b-card">
-          <div class="b-medal"><span class="d">19</span><span class="m">Sep</span></div>
-          <div>
-            <p class="b-name">Brooklyn Carnahan</p>
+            <p class="b-name">Lila Glenn</p>
             <p class="b-age">Turning 10</p>
           </div>
         </div>
 
         <div class="b-card">
-          <div class="b-medal"><span class="d">28</span><span class="m">Sep</span></div>
+          <div class="b-medal"><span class="d">5</span><span class="m">Oct</span></div>
           <div>
-            <p class="b-name">Hank Walters</p>
+            <p class="b-name">Kayla Jensen</p>
+            <p class="b-age">Turning 9</p>
+          </div>
+        </div>
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">11</span><span class="m">Oct</span></div>
+          <div>
+            <p class="b-name">Riley Carnahan</p>
+            <p class="b-age">Turning 7</p>
+          </div>
+        </div>
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">22</span><span class="m">Oct</span></div>
+          <div>
+            <p class="b-name">Jaxon Campbell</p>
+            <p class="b-age">Turning 7</p>
+          </div>
+        </div>
+
+        <div class="b-card">
+          <div class="b-medal"><span class="d">31</span><span class="m">Oct</span></div>
+          <div>
+            <p class="b-name">Cliff Wilkey</p>
             <p class="b-age">Turning 9</p>
           </div>
         </div>
@@ -518,27 +488,53 @@
       </div>
     </section>
 
+  </div>
+
+  <div class="grid rest">
+
     <hr class="rowrule">
 
-    <!-- ===== 3 · songs we are learning (left) ===== -->
-    <section class="blk-singing">
-      <h2 class="blk-title">Songs We Are Learning</h2>
-      <div class="blk-tick"></div>
-      <a class="s-play"
-         href="https://www.youtube.com/playlist?list=PLaYp69Rghk-PMCj8zfqe9njJGMrykEDKe"
-         target="_blank" rel="noopener">
-        <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true" focusable="false">
-          <path d="M0 0l11 6-11 6z" fill="currentColor"></path>
-        </svg>
-        Listen on YouTube
-      </a>
+    <!-- ===== 3 · songs we are learning (full width, slim) ===== -->
+    <section class="blk-singing full">
+      <div class="s-bar">
+        <div>
+          <h2 class="blk-title">Songs We Are Learning</h2>
+          <div class="blk-tick"></div>
+        </div>
+        <a class="s-play"
+           href="https://www.youtube.com/playlist?list=PLaYp69Rghk-PMCj8zfqe9njJGMrykEDKe"
+           target="_blank" rel="noopener">
+          <svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true" focusable="false">
+            <path d="M0 0l11 6-11 6z" fill="currentColor"></path>
+          </svg>
+          Listen on YouTube
+        </a>
+      </div>
     </section>
 
-    <!-- ===== 4 · upcoming dates (right) ===== -->
-    <section class="blk-dates">
+    <hr class="rowrule">
+
+    <!-- ===== 4 · upcoming dates (full width) ===== -->
+    <section class="blk-dates full">
       <h2 class="blk-title">Upcoming Dates</h2>
       <div class="blk-tick"></div>
+      <div class="u-wrap">
+      <div class="u-call">
+        <p class="u-call-title">Primary Program November 8</p>
+        <p class="u-call-body">Parts were handed out a few weeks ago. If you would like to update your part in your own words, please text a member of the Primary Presidency, and we will update it!</p>
+      </div>
       <div class="u-list">
+
+        <div class="u-row">
+          <div class="u-date"><span class="d">4</span><span class="m">Nov</span></div>
+          <div class="u-sep"></div>
+          <div>
+            <p class="u-event">Primary Program Practice</p>
+            <p class="u-when">Wednesday · 5:00–6:30 PM</p>
+            <p class="u-desc">We will be practicing the program from start to finish.</p>
+            <p class="u-note">Pizza and ice cream to celebrate their hard work!</p>
+          </div>
+        </div>
 
         <div class="u-row">
           <div class="u-date"><span class="d">8</span><span class="m">Nov</span></div>
@@ -553,99 +549,58 @@
              Optional third line: <p class="u-note">Bring a sack lunch</p> -->
 
       </div>
+      </div>
     </section>
 
     <hr class="rowrule">
 
     <!-- ===== 5 · come, follow me (full width) ===== -->
     <section class="blk-cfm full">
-      <h2 class="blk-title">September Come, Follow Me</h2>
+      <h2 class="blk-title">October Come, Follow Me</h2>
       <div class="blk-tick"></div>
       <div class="c-list">
 
         <div class="c-row">
-          <div class="c-when"><span class="d">6</span><span class="m">Sep</span></div>
+          <div class="c-when"><span class="d">4</span><span class="m">Oct</span></div>
           <div class="c-node"></div>
           <div class="c-body">
-            <p class="c-week">August 31 – September 6</p>
-            <p class="c-lesson">“Let Every Thing That Hath Breath Praise the Lord”</p>
-            <p class="c-ref">Psalms 102–3; 110; 116–19; 127–28; 135–39; 146–50</p>
+            <p class="c-week">September 28 – October 4</p>
+            <p class="c-lesson">“Comfort Ye My People”</p>
+            <p class="c-ref">Isaiah 40–49</p>
           </div>
         </div>
 
         <div class="c-row">
-          <div class="c-when"><span class="d">13</span><span class="m">Sep</span></div>
+          <div class="c-when"><span class="d">11</span><span class="m">Oct</span></div>
           <div class="c-node"></div>
           <div class="c-body">
-            <p class="c-week">September 7 – 13</p>
-            <p class="c-lesson">“He Shall Direct Thy Paths”</p>
-            <p class="c-ref">Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12</p>
+            <p class="c-week">October 5 – 11</p>
+            <p class="c-lesson">“He Hath Borne Our Griefs, and Carried Our Sorrows”</p>
+            <p class="c-ref">Isaiah 50–57</p>
           </div>
         </div>
 
         <div class="c-row">
-          <div class="c-when"><span class="d">20</span><span class="m">Sep</span></div>
+          <div class="c-when"><span class="d">18</span><span class="m">Oct</span></div>
           <div class="c-node"></div>
           <div class="c-body">
-            <p class="c-week">September 14 – 20</p>
-            <p class="c-lesson">“God Is My Salvation”</p>
-            <p class="c-ref">Isaiah 1–12</p>
+            <p class="c-week">October 12 – 18</p>
+            <p class="c-lesson">“The Redeemer Shall Come to Zion”</p>
+            <p class="c-ref">Isaiah 58–66</p>
           </div>
         </div>
 
         <div class="c-row">
-          <div class="c-when"><span class="d">27</span><span class="m">Sep</span></div>
+          <div class="c-when"><span class="d">25</span><span class="m">Oct</span></div>
           <div class="c-node"></div>
           <div class="c-body">
-            <p class="c-week">September 21 – 27</p>
-            <p class="c-lesson">“A Marvellous Work and a Wonder”</p>
-            <p class="c-ref">Isaiah 13–14; 22; 24–30; 35</p>
+            <p class="c-week">October 19 – 25</p>
+            <p class="c-lesson">“Before I Formed Thee in the Belly I Knew Thee”</p>
+            <p class="c-ref">Jeremiah 1–3; 7; 16–18; 20</p>
           </div>
         </div>
 
         <!-- repeat .c-row per Sunday, in date order -->
-
-      </div>
-    </section>
-
-    <hr class="rowrule">
-
-    <!-- ===== 6 · talks & prayers (full width) ===== -->
-    <section class="blk-talks full">
-      <h2 class="blk-title">Talks &amp; Prayers</h2>
-      <div class="blk-tick"></div>
-      <div class="t-grid">
-
-        <div class="t-card">
-          <p class="t-date">September 6</p>
-          <p class="t-role"><span class="r">Conducting</span><span class="n">Brynley Huff</span></p>
-          <p class="t-role"><span class="r">Opening Prayer</span><span class="n">Drake Thueson</span></p>
-          <p class="t-role"><span class="r">Talk</span><span class="n none">Bishopric Message</span></p>
-        </div>
-
-        <div class="t-card">
-          <p class="t-date">September 13</p>
-          <p class="t-role"><span class="r">Conducting</span><span class="n">Myles Satterfield</span></p>
-          <p class="t-role"><span class="r">Opening Prayer</span><span class="n">Oakley Cranney</span></p>
-          <p class="t-role"><span class="r">Talk</span><span class="n">Clifford Wilkey</span></p>
-        </div>
-
-        <div class="t-card">
-          <p class="t-date">September 20</p>
-          <p class="t-role"><span class="r">Conducting</span><span class="n">Lincoln Irvin</span></p>
-          <p class="t-role"><span class="r">Opening Prayer</span><span class="n">Riley Carnahan</span></p>
-          <p class="t-role"><span class="r">Talk</span><span class="n">Brooklyn Jensen</span></p>
-        </div>
-
-        <div class="t-card">
-          <p class="t-date">September 27</p>
-          <p class="t-role"><span class="r">Conducting</span><span class="n">Brooklyn Carnahan</span></p>
-          <p class="t-role"><span class="r">Opening Prayer</span><span class="n">Brad Satterfield</span></p>
-          <p class="t-role"><span class="r">Talk</span><span class="n">Payton Jussel</span></p>
-        </div>
-
-        <!-- repeat .t-card per Sunday, in date order.
-             Use <span class="n none"> for a non-name entry like "Bishopric Message". -->
 
       </div>
     </section>
@@ -665,21 +620,21 @@
         </div>
 
         <div class="v-row">
-          <div class="v-date">2<span class="m">Sep</span></div>
+          <div class="v-date">4<span class="m">Nov</span></div>
           <div>
             <p class="v-colhead">Boys</p>
-            <p class="v-what">Activity TBD</p>
+            <p class="v-what">Practicing the Primary Program</p>
             <p class="v-where">Church</p>
           </div>
           <div>
             <p class="v-colhead">Girls</p>
-            <p class="v-what">Activity TBD</p>
+            <p class="v-what">Practicing the Primary Program</p>
             <p class="v-where">Church</p>
           </div>
         </div>
 
         <div class="v-row">
-          <div class="v-date">16<span class="m">Sep</span></div>
+          <div class="v-date">18<span class="m">Nov</span></div>
           <div>
             <p class="v-colhead">Boys</p>
             <p class="v-what">Activity TBD</p>
